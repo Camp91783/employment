@@ -6,6 +6,9 @@ Rails.application.config.sorcery.submodules = [:http_basic_auth, :external, :rem
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
+   config.user_config do |user|
+    user.user_activation_mailer = UserMailer
+  end
   # -- core --
   # What controller action to call for non-authenticated users. You can also
   # override the 'not_authenticated' method of course.
@@ -178,7 +181,7 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `[:email]`
     #
     # user.username_attribute_names =
-
+    user.user_activation_mailer = UserMailer
 
     # change *virtual* password attribute, the one which is used until an encrypted one is generated.
     # Default: `:password`
@@ -333,13 +336,13 @@ Rails.application.config.sorcery.configure do |config|
     # mailer class. Needed.
     # Default: `nil`
     #
-    # user.reset_password_mailer =
+    #user.reset_password_mailer = 
 
 
     # reset password email method on your mailer class.
     # Default: `:reset_password_email`
     #
-    # user.reset_password_email_method_name =
+    #user.reset_password_email_method_name =  :reset_password_email
 
 
     # when true sorcery will not automatically
