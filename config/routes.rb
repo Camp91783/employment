@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :postings
   resources :job_postings
   resources :job_postings
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
   root :to      => 'home#about'
 
   get "login"   => "sessions#new",        :as => "login"
+  post '/login' => "sessions#create"
   get "logout"  => "sessions#destroy",    :as => "logout"
   get "signup"  => "users#new",           :as => "signup"
   
