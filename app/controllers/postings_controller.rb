@@ -4,13 +4,13 @@ class PostingsController < ApplicationController
   # GET /postings
   # GET /postings.json
   def index
-    @postings = Posting.all
+    @posting = Posting.all
   end
 
   # GET /postings/1
   # GET /postings/1.json
   def show
-    
+    @posting = Posting.find(params[:id])
   end
 
   # GET /postings/new
@@ -42,12 +42,12 @@ class PostingsController < ApplicationController
   # PATCH/PUT /postings/1.json
   def update
     respond_to do |format|
-      if @posting.update(posting_params)
+      if @postings.update(posting_params)
         format.html { redirect_to @posting, notice: 'Posting was successfully updated.' }
         format.json { render :show, status: :ok, location: @posting }
       else
         format.html { render :edit }
-        format.json { render json: @posting.errors, status: :unprocessable_entity }
+        format.json { render json: @postings.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -65,7 +65,7 @@ class PostingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_posting
-      @posting = Posting.find(params[:id])
+      @postings = Posting.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
