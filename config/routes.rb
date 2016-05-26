@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   resources :users
-  member do
-    get :activate
-  end
-
   root :to      => 'home#index'
 
   get "login"   => "sessions#new",        :as => "login"

@@ -69,11 +69,10 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :lastname, :birthdate, :email)
+      params.require(:user).permit(:username, :lastname, :birthdate, :email, :password, :password_confirmation)
     end
 end
 
-skip_before_filter :require_login, :only => [:index, :new, :create, :activate]
 
 def activate
   if (@user = User.load_from_activation_token(params[:id]))
