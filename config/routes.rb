@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :job_postings
   resources :job_postings
   resources :users
-  root :to      => 'home#index'
+  root :to      => 'home#about'
 
   get "login"   => "sessions#new",        :as => "login"
   get "logout"  => "sessions#destroy",    :as => "logout"
