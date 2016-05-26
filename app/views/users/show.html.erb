@@ -15,10 +15,8 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @user.active %>
-</p>
+<p><a href="postings">Link to Saved Jobs</a></p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

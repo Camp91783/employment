@@ -1,5 +1,5 @@
 class PostingsController < ApplicationController
-  before_action :set_posting, only: [:show, :edit, :update, :destroy]
+ 
 
   # GET /postings
   # GET /postings.json
@@ -10,6 +10,7 @@ class PostingsController < ApplicationController
   # GET /postings/1
   # GET /postings/1.json
   def show
+    
   end
 
   # GET /postings/new

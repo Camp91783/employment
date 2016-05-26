@@ -2,12 +2,13 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = [:http_basic_auth, :external, :remember_me, :reset_password, :activity_logging, :brute_force_protection, :user_activation, :session_timeout]
+# Rails.application.config.sorcery.submodules = [:http_basic_auth, :external, :remember_me, :reset_password, :activity_logging, :brute_force_protection, :user_activation, :session_timeout]
+Rails.application.config.sorcery.submodules = []
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
-   config.user_config do |user|
-    user.user_activation_mailer = UserMailer
+  config.user_config do |user|
+    # user.user_activation_mailer = UserMailer
   end
   # -- core --
   # What controller action to call for non-authenticated users. You can also
@@ -181,7 +182,7 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `[:email]`
     #
     # user.username_attribute_names =
-    user.user_activation_mailer = UserMailer
+    # user.user_activation_mailer = UserMailer
 
     # change *virtual* password attribute, the one which is used until an encrypted one is generated.
     # Default: `:password`
