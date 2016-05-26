@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :postings
+  resources :job_postings
+  resources :job_postings
   resources :users
   root :to      => 'home#index'
 
