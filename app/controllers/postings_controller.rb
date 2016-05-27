@@ -26,6 +26,8 @@ class PostingsController < ApplicationController
   # POST /postings.json
   def create
     @posting = Posting.new(posting_params)
+    @posting = Posting.create( posting_params )
+
 
     respond_to do |format|
       if @posting.save
@@ -72,4 +74,8 @@ class PostingsController < ApplicationController
     def posting_params
       params.require(:posting).permit(:title, :location, :contact, :url, :notes, :date_applied, :company)
     end
+
+    def user_params
+      params.require(:user).permit(:attachment)
+end
 end
