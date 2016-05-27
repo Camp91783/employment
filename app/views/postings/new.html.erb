@@ -2,11 +2,9 @@
 
 <%= render 'form' %>
 
+
 <%= link_to 'Back', postings_path %>
 
-<p><a href="/">Back Home</a></p>
 
-<%= form_for @posting, url: postings_path, html: { multipart: true } do |form| %>
-  <%= form.file_field :attachment %>
-<% end %>
+
 

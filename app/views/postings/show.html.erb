@@ -32,8 +32,23 @@
 
 <p>
   <strong>Date applied:</strong>
+<p>
   <%= @posting.date_applied %>
 </p>
+
+<% if @posting.attachment %>
+<p>
+  <strong>Resume:</strong>
+    <%= link_to "Attached File", @posting.attachment.url %>
+</p>
+<% end %>
+
+<% if @posting.attachment %>
+<p>
+  <strong>Cover Letter:</strong>
+    <%= link_to "Attached File", @posting.attachment.url %>
+</p>
+<% end %>
 
 
 <%= link_to 'Edit', edit_posting_path(@posting) %> |

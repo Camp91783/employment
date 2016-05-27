@@ -20,13 +20,13 @@ class PostingsController < ApplicationController
 
   # GET /postings/1/edit
   def edit
+    @posting = Posting.find(params[:id])
   end
 
   # POST /postings
   # POST /postings.json
   def create
     @posting = Posting.new(posting_params)
-    @posting = Posting.create( posting_params )
 
 
     respond_to do |format|
@@ -44,7 +44,9 @@ class PostingsController < ApplicationController
   # PATCH/PUT /postings/1.json
   def update
     respond_to do |format|
-      if @postings.update(posting_params)
+      @posting = Posting.find(params[:id])
+      byebug
+      if @posting.update_attributes(posting_params)
         format.html { redirect_to @posting, notice: 'Posting was successfully updated.' }
         format.json { render :show, status: :ok, location: @posting }
       else
@@ -57,12 +59,11 @@ class PostingsController < ApplicationController
   # DELETE /postings/1
   # DELETE /postings/1.json
     def destroy
+      @posting = Posting.find(params[:id])
       @posting.destroy
-      respond_to do |format|
-        format.html { redirect_to postings_url, notice: 'Posting was successfully destroyed.' }
-        format.json { head :no_content }
+      redirect_to :postings, notice: "Successfully deleted!!!"
     end
-  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -72,7 +73,7 @@ class PostingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def posting_params
-      params.require(:posting).permit(:title, :location, :contact, :url, :notes, :date_applied, :company)
+      params.require(:posting).permit(:title, :location, :contact, :url, :notes, :date_applied, :company, :attachment)
     end
 
     def user_params
