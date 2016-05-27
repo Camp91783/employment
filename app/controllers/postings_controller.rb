@@ -56,11 +56,11 @@ class PostingsController < ApplicationController
 
   # DELETE /postings/1
   # DELETE /postings/1.json
-  def destroy
-    @posting.destroy
-    respond_to do |format|
-      format.html { redirect_to postings_url, notice: 'Posting was successfully destroyed.' }
-      format.json { head :no_content }
+    def destroy
+      @posting.destroy
+      respond_to do |format|
+        format.html { redirect_to postings_url, notice: 'Posting was successfully destroyed.' }
+        format.json { head :no_content }
     end
   end
 
@@ -77,5 +77,5 @@ class PostingsController < ApplicationController
 
     def user_params
       params.require(:user).permit(:attachment)
-end
+    end
 end
