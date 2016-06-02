@@ -1,55 +1,167 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+
+<body>
+
+
+<div class="container">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
 <style> 
 
-html { 
-  background: url(http://luxurycouncil.com/wp-content/uploads/2013/06/chicago-dusk.jpg) no-repeat center center fixed; 
+html {  
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 table {
-  color:black;
-  background: #9fb8c4;
-  background-image: -webkit-linear-gradient(top, #9fb8c4, #524b4b);
-  background-image: -moz-linear-gradient(top, #9fb8c4, #524b4b);
-  background-image: -ms-linear-gradient(top, #9fb8c4, #524b4b);
-  background-image: -o-linear-gradient(top, #9fb8c4, #524b4b);
-  background-image: linear-gradient(to bottom, #9fb8c4, #524b4b);
+  table-layout: fixed;
+  color:midnightblue;
   -webkit-border-radius: 13;
   -moz-border-radius: 13;
-  border-radius: 4px;
   font-family: Tahoma;
-  color: gainsboro;
+  color: midnightblue;
   font-size: 22px;
   text-decoration: none;
 }
 
 table{
-    margin:14px 0 0 0;
+    margin:2px 0 0 0;
 }
+
+footer  {
+  margin: 100px
+}
+
+.info {
+  color: dimgrey;
+  font-size: 24px;
+}
+
+.row  {
+}
+
+img   {        
+width: 100%; 
+height: 100%;
+overflow: auto;
+  }
+
+
 </style>
 
-<h1>Listing Postings</h1>
+<head>
+<nav class="navbar navbar-default navbar-static-top">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#">Pete Camp </a>
+         <br>
+         <br>
+       </div>
+       <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav">
+      <li class="active"><%= link_to 'Back to All Users', users_path(@user) %></li>
+           <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">Education and Job Search</li>
+            <li><a href="#">Link to Star City Code School</a></li>
+            <li><a href="#">Job Search Links</a></li>
+            <li class="dropdown-header">Portfolio</li>
+            <li><a href="#">Soccer Management System</a></li>
+            <li><a href="http://camp91783.github.io/w07-d03-tic-tac-toe/">Tic Tac Toe</a></li>
+            <li class="dropdown-header">Resources & Media</li>
+            <li><a href="http://careerlink.com/lp/brilliant-people-omaha-sumeet-jain-talks-founding-omaha-code-school-advice-new-developers/?utm_source=constantcontact&utm_medium=email&utm_term=brilliantppl&utm_campaign=jobseeker">Interview with School Founder Summeet Jain</a></li>
+            <li><a href="http://siliconprairienews.com/2016/01/omaha-code-school-opens-star-city-code-school-in-lincoln/">Interview with Instructor Andrew Ek</a></li>
+             </ul>
+           </li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <li class="active"><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+         </ul>
+       </div><!--/.nav-collapse -->
+     </div>
+   </nav>
+  <head>
+     <title></title>
+  </head>
 
-<center><table style="width:50%"><center>
+  <div class="row">
+    <div class="img">
+      <div class="col-md-12">
+      <img src="http://luxurycouncil.com/wp-content/uploads/2013/06/chicago-dusk.jpg" class="img-responsive"></img>
+      <center><table style="width:50%"><center>
 <table bgcolor="honeydew">
 <table class = "table table-responsive">
   <thead>
     <tr>
-      <th>Title</th>
+    <div class="container">
+  <div class="row">
+    <div class="info">
+      <div class="col-md-4"><p>
+      <th>Title</th></p>
+      </div>
+    </div>
+  </div>
       <br>
+  <div class="row">
+    <div class="info">
+      <div class="col-md-4"><p>
       <th>Company</th>
+      </div>
+    </div>
+  </div>
       <br>
+  <div class="row">
+    <div class="info">
+      <div class="col-md-4"><p>
       <th>Location</th>
+      </div>
+    </div>
+  </div>
       <br>
+  <div class="row">
+    <div class="info">
+      <div class="col-md-4"><p>
       <th>Contact</th>
+      </div>
+    </div>
+  </div>
       <br>
+  <div class="row">
+    <div class="info">
+      <div class="col-md-4"><p>
       <th>Url</th>
+      </div>
+    </div>
+  </div>
       <br>
+  <div class="row">
+    <div class="info">
+      <div class="col-md-4"><p>
       <th>Notes</th>
+      </div>
+    </div>
+  </div>
       <br>
+  <div class="row">
+    <div class="info">
+      <div class="col-md-4"><p>
       <th>Date applied</th>
+       </div>
+    </div>
+  </div>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -74,7 +186,27 @@ table{
 </table>
 
 <br>
+    
+ <div class="row">
+    <div class="img">
+      <div class="col-md-12">
+      <img src="http://static1.squarespace.com/static/53ee9cece4b09d1f241db239/5408ab44e4b04f2a4fea902a/55e7a154e4b0f4565e4c312f/1441244028438/?format=1500w" class="img-responsive"></img>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Link to Peter Camp Github Account <a href="https://github.com/Camp91783/jobs.git">GitHub</a></p>
+  </div>
+</div>
+</body>
 
-<%= link_to 'New Posting', new_posting_path %>
+</html>
+<!DOCTYPE html>
+<style> 
+
+
+
+
 
 

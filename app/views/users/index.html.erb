@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <style> 
 
-html { 
-  background: url(http://d14dsi4x2zx6ql.cloudfront.net/files/styles/welcome_image/public/SF_CWC_1280x642_sized_logo.jpg?itok=rArSDg4p) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+img   {        
+width: 100%; 
+height: 75%%;
+overflow: auto;
+  }
 
-td,  {
-  border: 2px solid black;
-  padding: 0.5rem;
+ul  {
 
 }
-div {
 
 }
 </style>
@@ -26,33 +21,81 @@ div {
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-
-<h1>Registered Users</h1>
-<div class="container-fluid">
-<center><table class="table table-striped table-bordered table-hover table-responsive" ><center>
-  <center><thead><center>
-    <tr class="active">
-      <th>Username</th>
-      
-    </tr>
-  </thead>
-
-  <tbody>
-    <center><td><% @users.each do |user| %></td></center>
-      <tr>
-        <td><%= user.username %></td>
-       
-      </tr>
+<nav class="navbar navbar-default navbar-static-top">
+     <div class="container">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#">Pete Camp</a>
+       </div>
+       <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav">
+           <li class="active"><a href="#">Home</a></li>
+           <li><a href="#about">About</a></li>
+           <li><a href="#contact">Contact</a></li>
+           <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+               <li><a href="#">Action</a></li>
+               <li><a href="#">Another action</a></li>
+               <li><a href="#">Something else here</a></li>
+               <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+               <li><a href="#">One more separated link</a></li>
+             </ul>
+           </li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="../navbar/">Default</a></li>
+           <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
+           <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+         </ul>
+       </div><!--/.nav-collapse -->
+     </div>
+     <div class="row">
+        <div class="img">
+          <div class="col-md-12">
+            <img src="http://travelchannel.sndimg.com/content/dam/images/travel/fullset/2014/12/6/explore-san-francisco-fishermans-wharf.jpg.rend.tccom.1280.960.jpeg" class="img-responsive"></img>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="container">
+          <div class="row">
+              <br>
+                <font color="black">
+                <h4>Registered Users</h4></font>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="container">
+           <div class="row">
+              <font color="black">
+              <th><strong>Username / Name</strong></th></font>
+              <td><% @users.each do |user| %>
+              <td><%= user.username %></td>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <div class="row">
+    <div class="img">
+      <div class="col-md-12">
+        <img src="http://i.huffpost.com/gen/2598036/images/o-SAN-FRANCISCO-facebook.jpg" class ="img-responsive"></img>
+      </div>
+    </div>
+  </div>
+ 
 
-<br>
 
-<%= link_to 'New User', new_user_path %>
-<br>
-<p><a href="postings">jobs</a></p>
-<br>
-<p><a href="/">Back Home</a></p>
 
