@@ -3,7 +3,7 @@
 
 img   {        
 width: 100%; 
-height: 75%%;
+height: 50%%;
 overflow: auto;
   }
 
@@ -22,6 +22,7 @@ ul  {
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
      <div class="container">
        <div class="navbar-header">
          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -34,42 +35,45 @@ ul  {
        </div>
        <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav">
-           <li class="active"><a href="#">Home</a></li>
-           <li><a href="#about">About</a></li>
-           <li><a href="#contact">Contact</a></li>
+          <li class="warning"><%= link_to 'New Job Posting', new_posting_path(@posting) %></li>
+          <li class="warning"><%= link_to 'Saved Jobs', postings_path(@posting) %></li>
+          <li class="active"><%= link_to 'Create a New User', new_user_path(@user) %></li>
            <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-             <ul class="dropdown-menu">
-               <li><a href="#">Action</a></li>
-               <li><a href="#">Another action</a></li>
-               <li><a href="#">Something else here</a></li>
-               <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-               <li><a href="#">One more separated link</a></li>
-             </ul>
-           </li>
-         </ul>
-         <ul class="nav navbar-nav navbar-right">
-           <li><a href="../navbar/">Default</a></li>
-           <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
-           <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">Education and Job Search</li>
+            <li><a href="#">Link to Star City Code School</a></li>
+            <li><a href="#">Job Search Links</a></li>
+            <li class="dropdown-header">Portfolio</li>
+            <li><a href="#">Soccer Management System</a></li>
+            <li><a href="http://camp91783.github.io/w07-d03-tic-tac-toe/">Tic Tac Toe</a></li>
+            <li class="dropdown-header">Resources & Media</li>
+            <li><a href="http://careerlink.com/lp/brilliant-people-omaha-sumeet-jain-talks-founding-omaha-code-school-advice-new-developers/?utm_source=constantcontact&utm_medium=email&utm_term=brilliantppl&utm_campaign=jobseeker">Interview with School Founder Summeet Jain</a></li>
+            <li><a href="http://siliconprairienews.com/2016/01/omaha-code-school-opens-star-city-code-school-in-lincoln/">Interview with Instructor Andrew Ek</a></li>
+          </ul>
+            <li class="warning"><%= link_to 'Logout', logout_path(@sessions) %></li>
+
          </ul>
        </div><!--/.nav-collapse -->
      </div>
      <div class="row">
         <div class="img">
           <div class="col-md-12">
-            <img src="http://travelchannel.sndimg.com/content/dam/images/travel/fullset/2014/12/6/explore-san-francisco-fishermans-wharf.jpg.rend.tccom.1280.960.jpeg" class="img-responsive"></img>
+            <img src="http://fc3d750e1b22019028ae-eb9d0534c31fede444754f378d638c42.r70.cf1.rackcdn.com/uploads/picture/source/1284/San_Francisco_-_Golden_Gate_Bridge.jpg" class="img-responsive"></img>
           </div>
         </div>
       </div>
+      <li><a href="postings">Saved Jobs</a></li>
       <div class="col-md-4">
         <div class="container">
           <div class="row">
               <br>
                 <font color="black">
                 <h4>Registered Users</h4></font>
+                <strong>Username / Name</strong></font>
+                <a><li><strong><% @users.each do |user| %></strong></li></a>
+                <a><li><strong><%= user.username %></strong></li></a>
+                <% end %>
               <br>
             </div>
           </div>
@@ -78,23 +82,28 @@ ul  {
       <div class="col-md-4">
         <div class="container">
            <div class="row">
-              <font color="black">
-              <th><strong>Username / Name</strong></th></font>
-              <td><% @users.each do |user| %>
-              <td><%= user.username %></td>
           </div>
         </div>
       </div>
       <div class="col-md-4">
       </div>
-    <% end %>
   <div class="row">
     <div class="img">
+      <div class="container">
       <div class="col-md-12">
-        <img src="http://i.huffpost.com/gen/2598036/images/o-SAN-FRANCISCO-facebook.jpg" class ="img-responsive"></img>
+        <img src="https://seattlesteve.files.wordpress.com/2014/02/dsc03070.jpg" class ="img-responsive"></img>
+      </div>
       </div>
     </div>
   </div>
+  </div>
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Link to Peter Camp Github Account <a href="https://github.com/Camp91783/jobs.git">GitHub</a></p>
+  </div>
+</div>
+</body>
+</html>
  
 
 

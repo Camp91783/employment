@@ -52,6 +52,7 @@ overflow: auto;
        <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav">
       <li class="active"><%= link_to 'Edit', edit_posting_path(@posting) %><Job Postings</a></li>
+      <li class="warning"><%= link_to 'New Job Posting', new_posting_path(@posting) %></li>
       <li class="warning"><%= link_to 'Back to All Jobs', postings_path(@posting) %></li>
       <li class="active"><%= link_to 'Back to All Users', users_path(@user) %></li>
            <li class="dropdown">
@@ -133,7 +134,19 @@ overflow: auto;
       <font color="black">
         <td><strong>Notes:</strong></td></font>
         <td><strong><%= @posting.notes %></strong></td>
-      </p></div>
+        </p></div>
+      <div class="col-md-4"><p>
+
+
+      <% if @posting.attachment %>
+
+<p>
+  <strong>Cover Letter:</strong>
+    <%= link_to "Attached File", @posting.attachment.url %>
+</p>
+
+<% end %>
+
     </div>
   </div>
     <div class="col-md-4"></div>

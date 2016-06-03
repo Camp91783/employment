@@ -45,7 +45,6 @@ class PostingsController < ApplicationController
   def update
     respond_to do |format|
       @posting = Posting.find(params[:id])
-      byebug
       if @posting.update_attributes(posting_params)
         format.html { redirect_to @posting, notice: 'Posting was successfully updated.' }
         format.json { render :show, status: :ok, location: @posting }

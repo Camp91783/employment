@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <style> 
 
-html { 
-  background: url(http://d14dsi4x2zx6ql.cloudfront.net/files/styles/welcome_image/public/SF_CWC_1280x642_sized_logo.jpg?itok=rArSDg4p) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 </style>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -26,37 +20,76 @@ html {
     <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-  <div class= "navbar navbar-default navbar-fixed-top" role ="navigation" style="background-color: #e3f2fd;">
-    <div class="container">
-      <div class="navbar header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon bar"></span>
-            <span class="icon bar"></span>
-            <span class="icon bar"></span>
-        </button>
-        <a class= "navbar-brand" href="postings">Job Search</a>
-  </div> 
-  <div class= "navbar-collapse collapse">
-    <ul class="nav navbar-nav navbar-center">
+  <head>
+<nav class="navbar navbar-default navbar-static-top">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="#">Pete Camp </a>
+       </div>
+       <div id="navbar" class="navbar-collapse collapse">
+         <ul class="nav navbar-nav">
+      <li class="warning"><%= link_to 'New Job Posting', new_posting_path(@posting) %></li>
+      <li class="warning"><%= link_to 'Back to All Jobs', postings_path(@posting) %></li>
+      <li class="active"><%= link_to 'Back to All Users', users_path(@user) %></li>
+           <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">Education and Job Search</li>
+            <li><a href="#">Link to Star City Code School</a></li>
+            <li><a href="#">Job Search Links</a></li>
+            <li class="dropdown-header">Portfolio</li>
+            <li><a href="#">Soccer Management System</a></li>
+            <li><a href="http://camp91783.github.io/w07-d03-tic-tac-toe/">Tic Tac Toe</a></li>
+            <li class="dropdown-header">Resources & Media</li>
+            <li><a href="http://careerlink.com/lp/brilliant-people-omaha-sumeet-jain-talks-founding-omaha-code-school-advice-new-developers/?utm_source=constantcontact&utm_medium=email&utm_term=brilliantppl&utm_campaign=jobseeker">Interview with School Founder Summeet Jain</a></li>
+            <li><a href="http://siliconprairienews.com/2016/01/omaha-code-school-opens-star-city-code-school-in-lincoln/">Interview with Instructor Andrew Ek</a></li>
+             </ul>
+           </li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <li class="active"><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+         </ul>
+       </div><!--/.nav-collapse -->
+     </div>
+   </nav>
+  <head>
+  <div class="row">
+    <div class="img">
+      <div class="col-md-12">
+      <img src="http://www.tourist-destinations.net/wp-content/uploads/2013/07/waikiki.jpg" class="img-responsive"></img>
+    </div>
+  </div>
+</div>
+     <title></title>
+  </head>
 <p id="notice"><%= notice %></p>
+<div class="container">
+    <p>
+      <strong>Username:</strong>
+      <%= @user.username %>
+    </p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+    <p>
+      <strong>Lastname:</strong>
+      <%= @user.lastname %>
+    </p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+</div>
+<br>
+<br>
+<br>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p><a href="/postings">Link to Saved Jobs</a></p>
+<p><a href="/postings">All Saved Jobs</a></p>
+<p><a href="/users">All Saved Users</a></p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

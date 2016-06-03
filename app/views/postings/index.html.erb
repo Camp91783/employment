@@ -1,189 +1,120 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+  <style> 
+
+    html {  
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    table {
+      table-layout: fixed;
+      color:midnightblue;
+      -webkit-border-radius: 13;
+      -moz-border-radius: 13;
+      font-family: Tahoma;
+      color: midnightblue;
+      font-size: 22px;
+      text-decoration: none;
+    }
+
+    table{
+        margin:2px 0 0 0;
+    }
+
+    footer  {
+      margin: 100px
+    }
+
+    .info {
+      color: dimgrey;
+      font-size: 24px;
+    }
+
+    .row  {
+    }
+    img   {        
+      width: 100%; 
+      height: 100%;
+      overflow: auto;
+    }
+  </style>
+</head>
 <body>
-
-
-<div class="container">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<style type="text/css">
-<style> 
-
-html {  
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-table {
-  table-layout: fixed;
-  color:midnightblue;
-  -webkit-border-radius: 13;
-  -moz-border-radius: 13;
-  font-family: Tahoma;
-  color: midnightblue;
-  font-size: 22px;
-  text-decoration: none;
-}
-
-table{
-    margin:2px 0 0 0;
-}
-
-footer  {
-  margin: 100px
-}
-
-.info {
-  color: dimgrey;
-  font-size: 24px;
-}
-
-.row  {
-}
-
-img   {        
-width: 100%; 
-height: 100%;
-overflow: auto;
-  }
-
-
-</style>
-
-<head>
-<nav class="navbar navbar-default navbar-static-top">
-       <div class="navbar-header">
-         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-           <span class="sr-only">Toggle navigation</span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-           <span class="icon-bar"></span>
-         </button>
-         <a class="navbar-brand" href="#">Pete Camp </a>
-         <br>
-         <br>
-       </div>
-       <div id="navbar" class="navbar-collapse collapse">
-         <ul class="nav navbar-nav">
-      <li class="active"><%= link_to 'Back to All Users', users_path(@user) %></li>
-           <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">Education and Job Search</li>
-            <li><a href="#">Link to Star City Code School</a></li>
-            <li><a href="#">Job Search Links</a></li>
-            <li class="dropdown-header">Portfolio</li>
-            <li><a href="#">Soccer Management System</a></li>
-            <li><a href="http://camp91783.github.io/w07-d03-tic-tac-toe/">Tic Tac Toe</a></li>
-            <li class="dropdown-header">Resources & Media</li>
-            <li><a href="http://careerlink.com/lp/brilliant-people-omaha-sumeet-jain-talks-founding-omaha-code-school-advice-new-developers/?utm_source=constantcontact&utm_medium=email&utm_term=brilliantppl&utm_campaign=jobseeker">Interview with School Founder Summeet Jain</a></li>
-            <li><a href="http://siliconprairienews.com/2016/01/omaha-code-school-opens-star-city-code-school-in-lincoln/">Interview with Instructor Andrew Ek</a></li>
-             </ul>
-           </li>
-         </ul>
-         <ul class="nav navbar-nav navbar-right">
-           <li class="active"><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
-         </ul>
-       </div><!--/.nav-collapse -->
+  <div class ="container">
+    <nav class="navbar navbar-default navbar-static-top">
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="#">Pete Camp </a>
+       <br>
+       <br>
      </div>
-   </nav>
-  <head>
-     <title></title>
-  </head>
+     <div id="navbar" class="navbar-collapse collapse">
+       <ul class="nav navbar-nav">
+    <li class="warning"><%= link_to 'New Job Posting', new_posting_path(@posting) %></li>
+    <li class="active"><%= link_to 'Back to All Users', users_path(@user) %></li>
+         <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header">Education and Job Search</li>
+          <li><a href="#">Link to Star City Code School</a></li>
+          <li><a href="#">Job Search Links</a></li>
+          <li class="dropdown-header">Portfolio</li>
+          <li><a href="#">Soccer Management System</a></li>
+          <li><a href="http://camp91783.github.io/w07-d03-tic-tac-toe/">Tic Tac Toe</a></li>
+          <li class="dropdown-header">Resources & Media</li>
+          <li><a href="http://careerlink.com/lp/brilliant-people-omaha-sumeet-jain-talks-founding-omaha-code-school-advice-new-developers/?utm_source=constantcontact&utm_medium=email&utm_term=brilliantppl&utm_campaign=jobseeker">Interview with School Founder Summeet Jain</a></li>
+          <li><a href="http://siliconprairienews.com/2016/01/omaha-code-school-opens-star-city-code-school-in-lincoln/">Interview with Instructor Andrew Ek</a></li>
 
-  <div class="row">
-    <div class="img">
-      <div class="col-md-12">
-      <img src="http://luxurycouncil.com/wp-content/uploads/2013/06/chicago-dusk.jpg" class="img-responsive"></img>
-      <center><table style="width:50%"><center>
-<table bgcolor="honeydew">
-<table class = "table table-responsive">
-  <thead>
-    <tr>
-    <div class="container">
-  <div class="row">
-    <div class="info">
-      <div class="col-md-4"><p>
-      <th>Title</th></p>
-      </div>
-    </div>
+           </ul>
+         </li>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
+        <li class="warning"><%= link_to 'Logout', logout_path(@sessions) %></li>
+       </ul>
+     </div><!--/.nav-collapse -->
+   </div>
+ </nav>
+ </div>
+<div class="row">
+
+  <div class="col-md-12">
+    <img src="http://luxurycouncil.com/wp-content/uploads/2013/06/chicago-dusk.jpg" class="img-responsive"></img>
   </div>
-      <br>
-  <div class="row">
-    <div class="info">
-      <div class="col-md-4"><p>
-      <th>Company</th>
-      </div>
-    </div>
-  </div>
-      <br>
-  <div class="row">
-    <div class="info">
-      <div class="col-md-4"><p>
-      <th>Location</th>
-      </div>
-    </div>
-  </div>
-      <br>
-  <div class="row">
-    <div class="info">
-      <div class="col-md-4"><p>
-      <th>Contact</th>
-      </div>
-    </div>
-  </div>
-      <br>
-  <div class="row">
-    <div class="info">
-      <div class="col-md-4"><p>
-      <th>Url</th>
-      </div>
-    </div>
-  </div>
-      <br>
-  <div class="row">
-    <div class="info">
-      <div class="col-md-4"><p>
-      <th>Notes</th>
-      </div>
-    </div>
-  </div>
-      <br>
-  <div class="row">
-    <div class="info">
-      <div class="col-md-4"><p>
-      <th>Date applied</th>
-       </div>
-    </div>
-  </div>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+</div>
+<div class="table-responsive">
+  <table class = "table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Company</th>
+      </tr>
+    </thead>
+
 
   <tbody>
     <% @posting.each do |posting| %>
       <tr>
-        <td><%= posting.title %></td>
+        <td><%=link_to posting.title ,posting %></td>
         <td><%= posting.company %></td>
-        <td><%= posting.location %></td>
-        <td><%= posting.contact %></td>
-        <td><%= posting.url %></td>
-        <td><%= posting.notes %></td>
-        <td><%= posting.date_applied %></td>
-        <td><%= link_to 'Details', posting %></td>
-        <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
-        <td><%= link_to 'Remove', posting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-</table>
+        <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
     
@@ -199,14 +130,7 @@ overflow: auto;
     <p class="text-muted">Link to Peter Camp Github Account <a href="https://github.com/Camp91783/jobs.git">GitHub</a></p>
   </div>
 </div>
+
 </body>
 
 </html>
-<!DOCTYPE html>
-<style> 
-
-
-
-
-
-
